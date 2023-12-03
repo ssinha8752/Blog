@@ -2,9 +2,13 @@
     <div class="content">
         <h2>Latest Posts</h2>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores ducimus sunt minima dolorem! Amet, pariatur. Tempora ullam quas nobis neque explicabo, dolore quidem est eveniet! Soluta molestias facilis sint laudantium.</p>
+        <% if(locals.posts){ %>
         <p><u>New posts : </u></p>
         <ul>
-            <li><%= locals.latestContent%></li>
+                <% posts.forEach(function(post){ %>
+                    <li><%= (post).substring(0,100)+" ..." %><a>Read more</a></li>
+                <% }); %>
+            <% } %>
         </ul>
     </div>
 

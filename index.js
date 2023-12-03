@@ -4,6 +4,8 @@ import bodyParser from "body-parser";
 const app = express();
 const port = 3000;
 
+const posts=["First Post"];
+
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"))
 
@@ -22,7 +24,9 @@ app.get("/deletePost",(req,res)=>{
 
 app.post("/submit",(req,res)=>{
     const latestContent=req.body.postContent;
-    res.render("index.ejs",{latestContent:latestContent});
+    posts.push(latestContent);
+    console.log(posts);
+    res.render("index.ejs",{posts:posts});
 
 })
 
