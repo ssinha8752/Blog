@@ -1,21 +1,11 @@
 <%- include("partials/header.ejs")%>
-
-    <header>
-        <h1>Your Blog Title</h1>
-    </header>
-
-    <nav>
-        <a href="/">Home</a>
-        <a href="/addPost">Add</a>
-        <a href="/updatePost">Edit</a>
-        <a href="/deletePost">Delete</a>
-    </nav>
-
     <div class="content">
         <h2>Latest Posts</h2>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores ducimus sunt minima dolorem! Amet, pariatur. Tempora ullam quas nobis neque explicabo, dolore quidem est eveniet! Soluta molestias facilis sint laudantium.</p>
         <p><u>New posts : </u></p>
-        <p><%= locals.latestContent%></p>
+        <ul>
+            <li><%= locals.latestContent%></li>
+        </ul>
     </div>
 
 <%- include("partials/footer.ejs")%>

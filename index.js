@@ -26,6 +26,10 @@ app.post("/submit",(req,res)=>{
 
 })
 
+app.get("/post",(req,res)=>{
+    res.render("post.ejs");
+})
+
 app.get("/",(req,res)=>{
     res.render("index.ejs");
 })
