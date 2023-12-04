@@ -14,6 +14,10 @@ app.get("/addPost",(req,res)=>{
     res.render("Add.ejs")
 })
 
+app.get("/readPost",(req,res)=>{
+    res.send("Read Post")
+})
+
 app.get("/updatePost",(req,res)=>{
     res.send("Update Post")
 })

@@ -6,7 +6,7 @@
         <p><u>New posts : </u></p>
         <ul>
                 <% posts.forEach(function(post){ %>
-                    <li><%= (post).substring(0,100)+" ..." %><a>Read more</a></li>
+                    <li><%= (post).substring(0,100)+" ..." %> <a href="/readPost">Read more</a> <a href="/updatePost">Edit</a> <a href="/deletePost">Delete</a></li>
                 <% }); %>
             <% } %>
         </ul>
