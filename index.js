@@ -15,6 +15,12 @@ app.get("/addPost",(req,res)=>{
 })
 
 app.get("/readPost",(req,res)=>{
+    console.log(req.body)
+    console.log(res.body)
+    res.send("OK")
+})
+
+app.get("/readPost",(req,res)=>{
     res.send("Read Post")
 })
 
