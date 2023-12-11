@@ -26,7 +26,10 @@ app.get("/updatePost",(req,res)=>{
 })
 
 app.get("/deletePost/:id",(req,res)=>{
-    console.log(req.params.id);
+    let deletedItem=req.params.id;
+    const filteredArray = posts.filter((element,i)=>i!==deletedItem);
+    console.log(deletedItem,filteredArray);
+    res.render("index.ejs",{posts:posts});
 })
 
 app.post("/submit",(req,res)=>{
@@ -34,7 +37,6 @@ app.post("/submit",(req,res)=>{
     posts.push(latestContent);
     console.log(posts);
     res.render("index.ejs",{posts:posts});
-
 })
 
 app.get("/post",(req,res)=>{
