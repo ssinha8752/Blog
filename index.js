@@ -4,32 +4,29 @@ import bodyParser from "body-parser";
 const app = express();
 const port = 3000;
 
-const posts=["First Post"];
+const posts=[];
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"))
 
 
 app.get("/addPost",(req,res)=>{
-    res.render("Add.ejs")
+    res.render("add.ejs")
 })
 
-app.get("/readPost",(req,res)=>{
+app.get("/readPost/:id",(req,res)=>{
     console.log(req.body)
-    console.log(res.body)
-    res.send("OK")
-})
-
-app.get("/readPost",(req,res)=>{
-    res.send("Read Post")
+    console.log(req.params.id);
+    let selectedPost=req.params.id;
+    res.render("post.ejs",{selectedPost:posts[selectedPost]});
 })
 
 app.get("/updatePost",(req,res)=>{
     res.send("Update Post")
 })
 
-app.get("/deletePost",(req,res)=>{
-    res.send("Delete Post")
+app.get("/deletePost/:id",(req,res)=>{
+    console.log(req.params.id);
 })
 
 app.post("/submit",(req,res)=>{

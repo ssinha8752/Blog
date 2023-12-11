@@ -5,12 +5,11 @@
         <% if(locals.posts){ %>
         <p><u>New posts : </u></p>
         <ul>
-                <% posts.forEach(function(post){ %>
-                    <li><%= (post).substring(0,100)+" ..." %> <a href="/readPost">Read more</a> <a href="/updatePost">Edit</a> <a href="/deletePost">Delete</a></li>
+                <% posts.forEach(function(post,i){ %>
+                    <li><%= (post).substring(0,100)+" ..." %> <a href="/readPost/<%= i %>">Read more</a> <a href="/updatePost">Edit</a> <a href="/deletePost">Delete</a></li>
                 <% }); %>
             <% } %>
         </ul>
     </div>
 
 <%- include("partials/footer.ejs")%>
-
