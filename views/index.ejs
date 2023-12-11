@@ -3,10 +3,9 @@
         <h2>Latest Posts</h2>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores ducimus sunt minima dolorem! Amet, pariatur. Tempora ullam quas nobis neque explicabo, dolore quidem est eveniet! Soluta molestias facilis sint laudantium.</p>
         <% if(locals.posts){ %>
-        <p><u>New posts : </u></p>
         <ul>
                 <% posts.forEach(function(post,i){ %>
-                    <li><%= (post).substring(0,100)+" ..." %> <a href="/readPost/<%= i %>">Read more</a> <a href="/updatePost">Edit</a> <a href="/deletePost/<%= i %>">Delete</a></li>
+                    <li><%= (post).substring(0,100)+" ..." %> <a href="/readPost/<%= i %>">Read more</a><a href="/deletePost/<%= i %>">Delete</a></li>
                 <% }); %>
             <% } %>
         </ul>

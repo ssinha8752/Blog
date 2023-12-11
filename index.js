@@ -27,8 +27,8 @@ app.get("/updatePost",(req,res)=>{
 
 app.get("/deletePost/:id",(req,res)=>{
     let deletedItem=req.params.id;
-    const filteredArray = posts.filter((element,i)=>i!==deletedItem);
-    console.log(deletedItem,filteredArray);
+    posts.splice(deletedItem,1);
+    console.log(deletedItem,posts);
     res.render("index.ejs",{posts:posts});
 })
 
@@ -44,7 +44,7 @@ app.get("/post",(req,res)=>{
 })
 
 app.get("/",(req,res)=>{
-    res.render("index.ejs");
+    res.render("index.ejs",{posts:posts});
 })
 
 app.listen(port,(req,res)=>{
