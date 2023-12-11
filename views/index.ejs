@@ -5,7 +5,8 @@
         <% if(locals.posts){ %>
         <ul>
                 <% posts.forEach(function(post,i){ %>
-                    <li><%= (post).substring(0,100)+" ..." %> <a href="/readPost/<%= i %>">Read more</a><a href="/deletePost/<%= i %>">Delete</a></li>
+                    <li><%= (post).substring(0,100)+" ..." %> <a href="/readPost/<%= i %>">Read more</a>
+                        <a href="/deletePost/<%= i %>">Delete</a></li>
                 <% }); %>
             <% } %>
         </ul>
