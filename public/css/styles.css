@@ -66,3 +66,15 @@ input[type="submit"] {
 input[type="submit"]:hover {
     background-color: #333;
 }
+
+.button-link {
+    display: inline-block;
+    padding: 5px 5px;
+    background-color: #555;
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    margin: 2px;
+    font-size: smaller;
+  }
