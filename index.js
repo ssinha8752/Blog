@@ -17,12 +17,13 @@ app.get("/addPost",(req,res)=>{
 app.get("/readPost/:id",(req,res)=>{
     console.log(req.body)
     console.log(req.params.id);
-    let selectedPost=req.params.id;
-    res.render("post.ejs",{selectedPost:posts[selectedPost]});
+    let selectedPostId=req.params.id;
+    res.render("post.ejs",{selectedPost:posts[selectedPostId],id:selectedPostId});
 })
 
-app.get("/updatePost",(req,res)=>{
-    res.send("Update Post")
+app.get("/updatePost/:id",(req,res)=>{
+    let selectedPostId=req.params.id;
+    res.render("update.ejs",{id:selectedPostId})
 })
 
 app.get("/deletePost/:id",(req,res)=>{
@@ -38,6 +39,15 @@ app.post("/submit",(req,res)=>{
     console.log(posts);
     res.redirect("/");
 })
+
+app.post("/edit/:id",(req,res)=>{
+    const editContent=req.body.postContent;
+    const editId=req.params.id;
+    console.log(editId,editContent);
+    posts[editId]=editContent;
+    res.redirect("/");
+})
+
 
 app.get("/post",(req,res)=>{
     res.render("post.ejs");
