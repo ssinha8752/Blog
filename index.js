@@ -15,8 +15,6 @@ app.get("/addPost",(req,res)=>{
 })
 
 app.get("/readPost/:id",(req,res)=>{
-    console.log(req.body)
-    console.log(req.params.id);
     let selectedPostId=req.params.id;
     res.render("post.ejs",{selectedPost:posts[selectedPostId],id:selectedPostId});
 })
@@ -29,21 +27,18 @@ app.get("/updatePost/:id",(req,res)=>{
 app.get("/deletePost/:id",(req,res)=>{
     let deletedItem=req.params.id;
     posts.splice(deletedItem,1);
-    console.log(deletedItem,posts);
     res.redirect("/");
 })
 
 app.post("/submit",(req,res)=>{
     const latestContent=req.body.postContent;
     posts.push(latestContent);
-    console.log(posts);
     res.redirect("/");
 })
 
 app.post("/edit/:id",(req,res)=>{
     const editContent=req.body.postContent;
     const editId=req.params.id;
-    console.log(editId,editContent);
     posts[editId]=editContent;
     res.redirect("/");
 })
